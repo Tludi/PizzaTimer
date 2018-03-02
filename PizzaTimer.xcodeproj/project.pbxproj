@@ -7,14 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00C625D02048B46200F9500F /* MasterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C625CF2048B46200F9500F /* MasterList.swift */; };
+		00C625D22048B4C000F9500F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C625D12048B4C000F9500F /* DataManager.swift */; };
+		00C625D42048B90200F9500F /* MasterList.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C625D32048B90200F9500F /* MasterList.json */; };
+		00C625D62048B98B00F9500F /* papamurphytest.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C625D52048B98B00F9500F /* papamurphytest.json */; };
+		00C625DA2048C94000F9500F /* MasterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C625D92048C94000F9500F /* MasterListViewController.swift */; };
+		00C625DC2048CA3B00F9500F /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C625DB2048CA3B00F9500F /* TimerViewController.swift */; };
 		00FBBD462048A71200836F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBBD452048A71200836F90 /* AppDelegate.swift */; };
 		00FBBD482048A71200836F90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBBD472048A71200836F90 /* ViewController.swift */; };
 		00FBBD4B2048A71200836F90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FBBD492048A71200836F90 /* Main.storyboard */; };
 		00FBBD4D2048A71200836F90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00FBBD4C2048A71200836F90 /* Assets.xcassets */; };
 		00FBBD502048A71200836F90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FBBD4E2048A71200836F90 /* LaunchScreen.storyboard */; };
+		00FBBD582048A7C800836F90 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 00FBBD572048A7C800836F90 /* Podfile */; };
+		694F4F37A57321B146366106 /* Pods_PizzaTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E187169C88632DC5DFA0B0E /* Pods_PizzaTimer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00C625CF2048B46200F9500F /* MasterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterList.swift; sourceTree = "<group>"; };
+		00C625D12048B4C000F9500F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		00C625D32048B90200F9500F /* MasterList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MasterList.json; sourceTree = "<group>"; };
+		00C625D52048B98B00F9500F /* papamurphytest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = papamurphytest.json; sourceTree = "<group>"; };
+		00C625D92048C94000F9500F /* MasterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterListViewController.swift; sourceTree = "<group>"; };
+		00C625DB2048CA3B00F9500F /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		00FBBD422048A71200836F90 /* PizzaTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00FBBD452048A71200836F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00FBBD472048A71200836F90 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +36,10 @@
 		00FBBD4C2048A71200836F90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00FBBD4F2048A71200836F90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00FBBD512048A71200836F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00FBBD572048A7C800836F90 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		01DC91E9AA2C97700A07B656 /* Pods-PizzaTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaTimer/Pods-PizzaTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		5E187169C88632DC5DFA0B0E /* Pods_PizzaTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6664F0CED2A1AFA486CB36 /* Pods-PizzaTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-PizzaTimer/Pods-PizzaTimer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				694F4F37A57321B146366106 /* Pods_PizzaTimer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +59,8 @@
 			children = (
 				00FBBD442048A71200836F90 /* PizzaTimer */,
 				00FBBD432048A71200836F90 /* Products */,
+				DB158B7F36944DD20071069E /* Pods */,
+				112C12569C5572085914707E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +75,38 @@
 		00FBBD442048A71200836F90 /* PizzaTimer */ = {
 			isa = PBXGroup;
 			children = (
+				00FBBD572048A7C800836F90 /* Podfile */,
 				00FBBD452048A71200836F90 /* AppDelegate.swift */,
 				00FBBD472048A71200836F90 /* ViewController.swift */,
 				00FBBD492048A71200836F90 /* Main.storyboard */,
 				00FBBD4C2048A71200836F90 /* Assets.xcassets */,
 				00FBBD4E2048A71200836F90 /* LaunchScreen.storyboard */,
 				00FBBD512048A71200836F90 /* Info.plist */,
+				00C625CF2048B46200F9500F /* MasterList.swift */,
+				00C625D12048B4C000F9500F /* DataManager.swift */,
+				00C625D32048B90200F9500F /* MasterList.json */,
+				00C625D52048B98B00F9500F /* papamurphytest.json */,
+				00C625D92048C94000F9500F /* MasterListViewController.swift */,
+				00C625DB2048CA3B00F9500F /* TimerViewController.swift */,
 			);
 			path = PizzaTimer;
+			sourceTree = "<group>";
+		};
+		112C12569C5572085914707E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E187169C88632DC5DFA0B0E /* Pods_PizzaTimer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB158B7F36944DD20071069E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01DC91E9AA2C97700A07B656 /* Pods-PizzaTimer.debug.xcconfig */,
+				CD6664F0CED2A1AFA486CB36 /* Pods-PizzaTimer.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00FBBD542048A71200836F90 /* Build configuration list for PBXNativeTarget "PizzaTimer" */;
 			buildPhases = (
+				1B4CD3F3CC22A95B77A1DC75 /* [CP] Check Pods Manifest.lock */,
 				00FBBD3E2048A71200836F90 /* Sources */,
 				00FBBD3F2048A71200836F90 /* Frameworks */,
 				00FBBD402048A71200836F90 /* Resources */,
+				7CE523DC30E699DA36BB8F6B /* [CP] Embed Pods Frameworks */,
+				2AFA280894DE015FB334D9D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,13 +171,72 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C625D62048B98B00F9500F /* papamurphytest.json in Resources */,
 				00FBBD502048A71200836F90 /* LaunchScreen.storyboard in Resources */,
 				00FBBD4D2048A71200836F90 /* Assets.xcassets in Resources */,
+				00FBBD582048A7C800836F90 /* Podfile in Resources */,
 				00FBBD4B2048A71200836F90 /* Main.storyboard in Resources */,
+				00C625D42048B90200F9500F /* MasterList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B4CD3F3CC22A95B77A1DC75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PizzaTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AFA280894DE015FB334D9D0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PizzaTimer/Pods-PizzaTimer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CE523DC30E699DA36BB8F6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PizzaTimer/Pods-PizzaTimer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PizzaTimer/Pods-PizzaTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00FBBD3E2048A71200836F90 /* Sources */ = {
@@ -137,6 +244,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00FBBD482048A71200836F90 /* ViewController.swift in Sources */,
+				00C625D22048B4C000F9500F /* DataManager.swift in Sources */,
+				00C625DA2048C94000F9500F /* MasterListViewController.swift in Sources */,
+				00C625D02048B46200F9500F /* MasterList.swift in Sources */,
+				00C625DC2048CA3B00F9500F /* TimerViewController.swift in Sources */,
 				00FBBD462048A71200836F90 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +383,7 @@
 		};
 		00FBBD552048A71200836F90 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01DC91E9AA2C97700A07B656 /* Pods-PizzaTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +399,7 @@
 		};
 		00FBBD562048A71200836F90 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD6664F0CED2A1AFA486CB36 /* Pods-PizzaTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
