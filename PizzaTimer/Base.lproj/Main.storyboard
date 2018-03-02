@@ -138,16 +138,16 @@
         <!--Custom Items-->
         <scene sceneID="XCI-GW-fox">
             <objects>
-                <viewController id="6fR-Kx-skD" sceneMemberID="viewController">
+                <viewController id="6fR-Kx-skD" customClass="CustomTableViewController" customModule="PizzaTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DEy-6h-IEB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zaw-zt-0kW">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="QfZ-Qv-QCZ" detailTextLabel="AWx-aI-zx9" style="IBUITableViewCellStyleSubtitle" id="n4v-yA-JjM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="customPizzaCell" textLabel="QfZ-Qv-QCZ" detailTextLabel="AWx-aI-zx9" style="IBUITableViewCellStyleSubtitle" id="n4v-yA-JjM">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n4v-yA-JjM" id="YxI-qO-m64">
@@ -170,8 +170,15 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Wsr-b6-LN4" kind="show" identifier="toPizzaTimerFromCustom" id="Rqd-ND-PeV"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6fR-Kx-skD" id="eXN-A4-Tf0"/>
+                                    <outlet property="delegate" destination="6fR-Kx-skD" id="eOV-ym-rAq"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,21 +197,24 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="customPizzaTable" destination="zaw-zt-0kW" id="Sw1-4W-mpR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G86-Ou-UK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-58" y="851"/>
         </scene>
-        <!--View Controller-->
+        <!--Custom Item View Controller-->
         <scene sceneID="DhP-q4-h3a">
             <objects>
-                <viewController id="jvI-mI-SIN" sceneMemberID="viewController">
+                <viewController id="jvI-mI-SIN" customClass="CustomItemViewController" customModule="PizzaTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LVu-ch-t68">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HjK-hu-PKT">
-                                <rect key="frame" x="112" y="171" width="150" height="30"/>
+                                <rect key="frame" x="112" y="127" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6Wg-0P-hUQ"/>
                                 </constraints>
@@ -213,14 +223,22 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbC-KH-heX">
-                                <rect key="frame" x="0.0" y="278" width="375" height="162"/>
+                                <rect key="frame" x="0.0" y="234" width="375" height="206"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jvI-mI-SIN" id="dI9-jP-JTv"/>
+                                    <outlet property="delegate" destination="jvI-mI-SIN" id="nVs-r2-giO"/>
+                                </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhl-ya-6B3">
                                 <rect key="frame" x="156" y="467" width="62" height="30"/>
                                 <state key="normal" title="Add Item"/>
+                                <connections>
+                                    <action selector="addCustomPizzaButton:" destination="jvI-mI-SIN" eventType="touchUpInside" id="5MO-Uc-HaT"/>
+                                    <segue destination="6fR-Kx-skD" kind="show" id="FND-fg-V3f"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Brand" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P4D-Mk-9rK">
-                                <rect key="frame" x="112" y="221" width="150" height="30"/>
+                                <rect key="frame" x="112" y="177" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="jl2-d1-4a6"/>
                                 </constraints>
@@ -246,6 +264,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Qb-fW-D6B"/>
                     </view>
+                    <connections>
+                        <outlet property="brandField" destination="P4D-Mk-9rK" id="Zv5-eE-Otg"/>
+                        <outlet property="nameField" destination="HjK-hu-PKT" id="VcV-0D-hkv"/>
+                        <outlet property="tempTimePicker" destination="VbC-KH-heX" id="3TW-S2-K1E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slC-iK-S1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -292,4 +315,8 @@
             <point key="canvasLocation" x="743" y="68"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rqd-ND-PeV"/>
+        <segue reference="FND-fg-V3f"/>
+    </inferredMetricsTieBreakers>
 </document>

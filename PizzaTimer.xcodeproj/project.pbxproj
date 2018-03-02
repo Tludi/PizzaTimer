@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00312CD62049EA1100B2768C /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00312CD52049EA1100B2768C /* CustomTableViewController.swift */; };
+		00312CD82049EA8700B2768C /* CustomItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00312CD72049EA8700B2768C /* CustomItemViewController.swift */; };
 		00C625D02048B46200F9500F /* MasterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C625CF2048B46200F9500F /* MasterList.swift */; };
 		00C625D22048B4C000F9500F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C625D12048B4C000F9500F /* DataManager.swift */; };
 		00C625D42048B90200F9500F /* MasterList.json in Resources */ = {isa = PBXBuildFile; fileRef = 00C625D32048B90200F9500F /* MasterList.json */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00312CD52049EA1100B2768C /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		00312CD72049EA8700B2768C /* CustomItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomItemViewController.swift; sourceTree = "<group>"; };
 		00C625CF2048B46200F9500F /* MasterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterList.swift; sourceTree = "<group>"; };
 		00C625D12048B4C000F9500F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		00C625D32048B90200F9500F /* MasterList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MasterList.json; sourceTree = "<group>"; };
@@ -88,6 +92,8 @@
 				00C625D52048B98B00F9500F /* papamurphytest.json */,
 				00C625D92048C94000F9500F /* MasterListViewController.swift */,
 				00C625DB2048CA3B00F9500F /* TimerViewController.swift */,
+				00312CD52049EA1100B2768C /* CustomTableViewController.swift */,
+				00312CD72049EA8700B2768C /* CustomItemViewController.swift */,
 			);
 			path = PizzaTimer;
 			sourceTree = "<group>";
@@ -245,9 +251,11 @@
 			files = (
 				00FBBD482048A71200836F90 /* ViewController.swift in Sources */,
 				00C625D22048B4C000F9500F /* DataManager.swift in Sources */,
+				00312CD82049EA8700B2768C /* CustomItemViewController.swift in Sources */,
 				00C625DA2048C94000F9500F /* MasterListViewController.swift in Sources */,
 				00C625D02048B46200F9500F /* MasterList.swift in Sources */,
 				00C625DC2048CA3B00F9500F /* TimerViewController.swift in Sources */,
+				00312CD62049EA1100B2768C /* CustomTableViewController.swift in Sources */,
 				00FBBD462048A71200836F90 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
