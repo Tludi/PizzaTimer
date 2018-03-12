@@ -13,8 +13,8 @@ class TimerViewController: UIViewController {
     var singlePizza = Pizza()
     var customPizza = CustomPizza()
     let shapeLayer = CAShapeLayer()
-    var baseTime = 12
-    var totalTime = 12
+    var baseTime = 0
+    var totalTime = 0
     var timer: Timer!
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -51,6 +51,8 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        baseTime = Int(singlePizza.cookingTime)! * 60 //remove the * 60 for shorter test times
+        totalTime = baseTime
         pauseButtonOutlet.isHidden = true
         resumeButtonOutlet.isHidden = true
         startTimerButtonOutlet.isHidden = false

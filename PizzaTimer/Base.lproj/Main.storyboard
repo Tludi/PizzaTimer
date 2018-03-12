@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="RTN-NE-jQM">
@@ -310,27 +315,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IN0-CR-jvP">
-                                <rect key="frame" x="118" y="323" width="138" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="118" y="316" width="138" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3If-Gi-Mxk">
-                                <rect key="frame" x="164" y="591" width="46" height="30"/>
+                                <rect key="frame" x="170" y="591" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="startTimerButton:" destination="Wsr-b6-LN4" eventType="touchUpInside" id="Fxz-ha-iZJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1t-IQ-Szn">
-                                <rect key="frame" x="164" y="591" width="42" height="30"/>
+                                <rect key="frame" x="166.5" y="591" width="42" height="30"/>
                                 <state key="normal" title="Pause"/>
                                 <connections>
                                     <action selector="pauseButton:" destination="Wsr-b6-LN4" eventType="touchUpInside" id="p4h-0F-s3m"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKO-B1-We7">
-                                <rect key="frame" x="164" y="591" width="55" height="30"/>
+                                <rect key="frame" x="160" y="591" width="55" height="30"/>
                                 <state key="normal" title="Resume"/>
                                 <connections>
                                     <action selector="resumeButton:" destination="Wsr-b6-LN4" eventType="touchUpInside" id="k4j-Kp-etF"/>
@@ -339,26 +344,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yKv-UZ-LkF" firstAttribute="bottom" secondItem="3If-Gi-Mxk" secondAttribute="bottom" constant="46" id="4Cz-X0-koF"/>
                             <constraint firstItem="IN0-CR-jvP" firstAttribute="centerX" secondItem="HLU-gt-YwP" secondAttribute="centerX" id="6BV-Ui-TiT"/>
-                            <constraint firstItem="3If-Gi-Mxk" firstAttribute="top" secondItem="Y32-Ts-CRL" secondAttribute="bottom" constant="45" id="7e2-b9-KBz"/>
+                            <constraint firstItem="RKO-B1-We7" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="Dcp-rM-7FI"/>
                             <constraint firstItem="0AR-1V-i3O" firstAttribute="leading" secondItem="yKv-UZ-LkF" secondAttribute="leading" constant="126" id="LZn-3B-Ery"/>
                             <constraint firstItem="IN0-CR-jvP" firstAttribute="leading" secondItem="yKv-UZ-LkF" secondAttribute="leading" constant="118" id="P9J-hK-lfp"/>
-                            <constraint firstItem="K1t-IQ-Szn" firstAttribute="leading" secondItem="3If-Gi-Mxk" secondAttribute="leading" id="Qhq-Tw-6vk"/>
                             <constraint firstItem="Y32-Ts-CRL" firstAttribute="top" secondItem="HLU-gt-YwP" secondAttribute="bottom" constant="38" id="RM4-3n-Cra"/>
                             <constraint firstItem="IN0-CR-jvP" firstAttribute="centerY" secondItem="hom-VN-QC1" secondAttribute="centerY" id="Tea-o4-fTl"/>
                             <constraint firstItem="HLU-gt-YwP" firstAttribute="centerX" secondItem="Y32-Ts-CRL" secondAttribute="centerX" id="Tz0-Yl-mRz"/>
-                            <constraint firstItem="3If-Gi-Mxk" firstAttribute="leading" secondItem="yKv-UZ-LkF" secondAttribute="leading" constant="164" id="ZSG-nw-KG8"/>
+                            <constraint firstItem="K1t-IQ-Szn" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="a7Z-gX-mu9"/>
                             <constraint firstItem="yKv-UZ-LkF" firstAttribute="bottom" secondItem="Y32-Ts-CRL" secondAttribute="bottom" constant="121" id="aSb-HH-30O"/>
                             <constraint firstItem="CuC-PL-ryW" firstAttribute="centerX" secondItem="0AR-1V-i3O" secondAttribute="centerX" id="al4-fg-bAk"/>
-                            <constraint firstItem="3If-Gi-Mxk" firstAttribute="centerX" secondItem="Y32-Ts-CRL" secondAttribute="centerX" id="gwK-wX-xFC"/>
-                            <constraint firstItem="K1t-IQ-Szn" firstAttribute="baseline" secondItem="3If-Gi-Mxk" secondAttribute="baseline" id="hTm-oj-9jr"/>
+                            <constraint firstItem="yKv-UZ-LkF" firstAttribute="bottom" secondItem="K1t-IQ-Szn" secondAttribute="bottom" constant="46" id="dE0-x9-MhJ"/>
+                            <constraint firstItem="3If-Gi-Mxk" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="hM0-ih-Ivf"/>
                             <constraint firstItem="CuC-PL-ryW" firstAttribute="top" secondItem="yKv-UZ-LkF" secondAttribute="top" constant="16" id="jqz-ii-cxb"/>
                             <constraint firstItem="CuC-PL-ryW" firstAttribute="trailing" secondItem="HLU-gt-YwP" secondAttribute="trailing" id="kfD-dk-jCj"/>
+                            <constraint firstItem="3If-Gi-Mxk" firstAttribute="top" secondItem="Y32-Ts-CRL" secondAttribute="bottom" constant="45" id="kn3-uP-mT2"/>
                             <constraint firstItem="0AR-1V-i3O" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="mVb-4Q-zBh"/>
-                            <constraint firstItem="RKO-B1-We7" firstAttribute="leading" secondItem="K1t-IQ-Szn" secondAttribute="leading" id="oMV-IZ-hkN"/>
+                            <constraint firstItem="K1t-IQ-Szn" firstAttribute="top" secondItem="Y32-Ts-CRL" secondAttribute="bottom" constant="45" id="oFN-os-mss"/>
                             <constraint firstItem="CuC-PL-ryW" firstAttribute="leading" secondItem="HLU-gt-YwP" secondAttribute="leading" id="sIx-3w-Pb9"/>
-                            <constraint firstItem="RKO-B1-We7" firstAttribute="baseline" secondItem="K1t-IQ-Szn" secondAttribute="baseline" id="xOB-pf-AES"/>
+                            <constraint firstItem="yKv-UZ-LkF" firstAttribute="bottom" secondItem="RKO-B1-We7" secondAttribute="bottom" constant="46" id="scz-Vb-hgX"/>
                             <constraint firstItem="0AR-1V-i3O" firstAttribute="top" secondItem="CuC-PL-ryW" secondAttribute="bottom" constant="8" symbolic="YES" id="xjp-XG-EAz"/>
+                            <constraint firstItem="RKO-B1-We7" firstAttribute="top" secondItem="Y32-Ts-CRL" secondAttribute="bottom" constant="45" id="zJm-1T-XX2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yKv-UZ-LkF"/>
                     </view>
@@ -380,6 +387,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="mv9-kn-C8P"/>
         <segue reference="Rqd-ND-PeV"/>
         <segue reference="FND-fg-V3f"/>
     </inferredMetricsTieBreakers>
