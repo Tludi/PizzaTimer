@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -328,7 +329,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1t-IQ-Szn">
-                                <rect key="frame" x="166.5" y="591" width="42" height="30"/>
+                                <rect key="frame" x="167" y="591" width="42" height="30"/>
                                 <state key="normal" title="Pause"/>
                                 <connections>
                                     <action selector="pauseButton:" destination="Wsr-b6-LN4" eventType="touchUpInside" id="p4h-0F-s3m"/>
@@ -341,12 +342,21 @@
                                     <action selector="resumeButton:" destination="Wsr-b6-LN4" eventType="touchUpInside" id="k4j-Kp-etF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQN-CV-lD2">
+                                <rect key="frame" x="16" y="591" width="46" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetTimerButton:" destination="Wsr-b6-LN4" eventType="touchUpInside" id="7nz-Oq-7fw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yKv-UZ-LkF" firstAttribute="bottom" secondItem="3If-Gi-Mxk" secondAttribute="bottom" constant="46" id="4Cz-X0-koF"/>
                             <constraint firstItem="IN0-CR-jvP" firstAttribute="centerX" secondItem="HLU-gt-YwP" secondAttribute="centerX" id="6BV-Ui-TiT"/>
+                            <constraint firstItem="fQN-CV-lD2" firstAttribute="baseline" secondItem="3If-Gi-Mxk" secondAttribute="baseline" id="Cox-X9-bSt"/>
                             <constraint firstItem="RKO-B1-We7" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="Dcp-rM-7FI"/>
+                            <constraint firstItem="fQN-CV-lD2" firstAttribute="leading" secondItem="hom-VN-QC1" secondAttribute="leadingMargin" id="HNS-vT-Rb4"/>
                             <constraint firstItem="0AR-1V-i3O" firstAttribute="leading" secondItem="yKv-UZ-LkF" secondAttribute="leading" constant="126" id="LZn-3B-Ery"/>
                             <constraint firstItem="IN0-CR-jvP" firstAttribute="leading" secondItem="yKv-UZ-LkF" secondAttribute="leading" constant="118" id="P9J-hK-lfp"/>
                             <constraint firstItem="Y32-Ts-CRL" firstAttribute="top" secondItem="HLU-gt-YwP" secondAttribute="bottom" constant="38" id="RM4-3n-Cra"/>
@@ -364,6 +374,7 @@
                             <constraint firstItem="K1t-IQ-Szn" firstAttribute="top" secondItem="Y32-Ts-CRL" secondAttribute="bottom" constant="45" id="oFN-os-mss"/>
                             <constraint firstItem="CuC-PL-ryW" firstAttribute="leading" secondItem="HLU-gt-YwP" secondAttribute="leading" id="sIx-3w-Pb9"/>
                             <constraint firstItem="yKv-UZ-LkF" firstAttribute="bottom" secondItem="RKO-B1-We7" secondAttribute="bottom" constant="46" id="scz-Vb-hgX"/>
+                            <constraint firstItem="RKO-B1-We7" firstAttribute="leading" secondItem="fQN-CV-lD2" secondAttribute="trailing" constant="98" id="tdp-hY-WDU"/>
                             <constraint firstItem="0AR-1V-i3O" firstAttribute="top" secondItem="CuC-PL-ryW" secondAttribute="bottom" constant="8" symbolic="YES" id="xjp-XG-EAz"/>
                             <constraint firstItem="RKO-B1-We7" firstAttribute="top" secondItem="Y32-Ts-CRL" secondAttribute="bottom" constant="45" id="zJm-1T-XX2"/>
                         </constraints>
@@ -373,8 +384,10 @@
                     <connections>
                         <outlet property="brandLabel" destination="0AR-1V-i3O" id="wFA-YZ-akH"/>
                         <outlet property="customLabel" destination="Y32-Ts-CRL" id="zXj-Jj-stb"/>
+                        <outlet property="mainView" destination="hom-VN-QC1" id="ICa-Ak-4mP"/>
                         <outlet property="nameLabel" destination="CuC-PL-ryW" id="rMU-K7-Szt"/>
                         <outlet property="pauseButtonOutlet" destination="K1t-IQ-Szn" id="3zp-1h-pdb"/>
+                        <outlet property="resetTimerOutlet" destination="fQN-CV-lD2" id="1tT-Hd-L8d"/>
                         <outlet property="resumeButtonOutlet" destination="RKO-B1-We7" id="l5F-43-cfB"/>
                         <outlet property="startTimerButtonOutlet" destination="3If-Gi-Mxk" id="1js-Dv-ZPL"/>
                         <outlet property="tempLabel" destination="HLU-gt-YwP" id="brG-TU-f1l"/>
@@ -387,7 +400,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mv9-kn-C8P"/>
         <segue reference="Rqd-ND-PeV"/>
         <segue reference="FND-fg-V3f"/>
     </inferredMetricsTieBreakers>

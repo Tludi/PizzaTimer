@@ -17,6 +17,7 @@ class TimerViewController: UIViewController {
     var totalTime = 0
     var timer: Timer!
     
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var brandLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -26,10 +27,11 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var startTimerButtonOutlet: UIButton!
     @IBAction func startTimerButton(_ sender: UIButton) {
         print("tapped start button")
-        handleTap()
+        handleTap(reset: false)
         resumeButtonOutlet.isHidden = true
         pauseButtonOutlet.isHidden = false
         startTimerButtonOutlet.isHidden = true
+        resetTimerOutlet.isHidden = true
     }
     
     @IBOutlet weak var pauseButtonOutlet: UIButton!
@@ -38,6 +40,7 @@ class TimerViewController: UIViewController {
         resumeButtonOutlet.isHidden = false
         pauseButtonOutlet.isHidden = true
         startTimerButtonOutlet.isHidden = true
+        resetTimerOutlet.isHidden = false
     }
     
     @IBOutlet weak var resumeButtonOutlet: UIButton!
@@ -46,16 +49,26 @@ class TimerViewController: UIViewController {
         resumeButtonOutlet.isHidden = true
         pauseButtonOutlet.isHidden = false
         startTimerButtonOutlet.isHidden = true
+        resetTimerOutlet.isHidden = true
     }
     
+    @IBOutlet weak var resetTimerOutlet: UIButton!
+    @IBAction func resetTimerButton(_ sender: UIButton) {
+        resetTimer()
+        startTimerButtonOutlet.isHidden = false
+        pauseButtonOutlet.isHidden = true
+        resumeButtonOutlet.isHidden = true
+        resetTimerOutlet.isHidden = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        baseTime = Int(singlePizza.cookingTime)! * 60 //remove the * 60 for shorter test times
+        baseTime = Int(singlePizza.cookingTime)! //* 60 //remove the * 60 for shorter test times
         totalTime = baseTime
         pauseButtonOutlet.isHidden = true
         resumeButtonOutlet.isHidden = true
         startTimerButtonOutlet.isHidden = false
+        resetTimerOutlet.isHidden = false
         
         print("From the Timer view")
         print(singlePizza.name)
@@ -75,8 +88,10 @@ class TimerViewController: UIViewController {
         }
         
         customLabel.text = "custom label to use or remove"
-        
-
+        timerRingLayer()
+    }
+    
+    func timerRingLayer() {
         let center = view.center
         
         // track layer
@@ -101,9 +116,9 @@ class TimerViewController: UIViewController {
         
         view.layer.addSublayer(trackLayer)
         view.layer.addSublayer(shapeLayer)
-        
-        
     }
+        
+
     
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
@@ -141,11 +156,20 @@ class TimerViewController: UIViewController {
     func endTimer() {
         timer.invalidate()
         totalTime = baseTime
-        timeLabel.text = timeFormatted(totalTime)
+        timeLabel.text = "Done!"
         
-        startTimerButtonOutlet.isHidden = false
+        startTimerButtonOutlet.isHidden = true
         pauseButtonOutlet.isHidden = true
         resumeButtonOutlet.isHidden = true
+        resetTimerOutlet.isHidden = false
+    }
+    
+    func resetTimer() {
+//        handleTap(reset: true)
+        totalTime = baseTime
+        timeLabel.text = timeFormatted(totalTime)
+//        timerRingLayer()
+        shapeLayer.beginTime = 0
     }
     
     func timeFormatted(_ totalSeconds: Int) -> String {
@@ -155,10 +179,11 @@ class TimerViewController: UIViewController {
     }
     
     
-    @objc private func handleTap() {
+    @objc private func handleTap(reset:Bool) {
         print("tap tap tap")
-        startTimer()
-        
+        if reset == false {
+            startTimer()
+        }
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.toValue = 1
         animation.duration = CFTimeInterval(totalTime) + 1
