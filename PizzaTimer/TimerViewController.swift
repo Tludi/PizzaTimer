@@ -170,6 +170,7 @@ class TimerViewController: UIViewController {
 //        handleTap(reset: true)
         totalTime = baseTime
         timeLabel.text = timeFormatted(totalTime)
+      view.setNeedsLayout()
         view.layoutIfNeeded()
     }
     
