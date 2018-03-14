@@ -91,6 +91,7 @@ class TimerViewController: UIViewController {
         timerRingLayer()
     }
     
+    // seperate out into individual functions
     func timerRingLayer() {
         let center = view.center
         
@@ -165,11 +166,11 @@ class TimerViewController: UIViewController {
     }
     
     func resetTimer() {
+        timer.invalidate()
 //        handleTap(reset: true)
         totalTime = baseTime
         timeLabel.text = timeFormatted(totalTime)
-//        timerRingLayer()
-        shapeLayer.beginTime = 0
+        view.layoutIfNeeded()
     }
     
     func timeFormatted(_ totalSeconds: Int) -> String {
