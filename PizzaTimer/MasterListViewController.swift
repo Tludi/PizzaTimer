@@ -38,7 +38,7 @@ class MasterListController: UIViewController, UITableViewDelegate, UITableViewDa
         let pizza = masterList[indexPath.row]
         
         cell.textLabel?.text = pizza.name
-        cell.detailTextLabel?.text = pizza.brand
+        cell.detailTextLabel?.text = "\(pizza.brand) - \(pizza.temperature)"
         
         return cell
     }
