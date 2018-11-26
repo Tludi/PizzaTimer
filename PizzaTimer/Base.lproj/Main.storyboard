@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XlX-bt-9jZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XlX-bt-9jZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="RTN-NE-jQM">
@@ -304,19 +299,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AR-1V-i3O">
-                                <rect key="frame" x="126" y="84" width="122" height="21"/>
+                                <rect key="frame" x="141.5" y="84" width="91.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLU-gt-YwP">
-                                <rect key="frame" x="142" y="466" width="91" height="21"/>
+                                <rect key="frame" x="143.5" y="466" width="88.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IN0-CR-jvP">
-                                <rect key="frame" x="118" y="316" width="138" height="35"/>
+                                <rect key="frame" x="113.5" y="316" width="147.5" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -353,28 +348,25 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yKv-UZ-LkF" firstAttribute="bottom" secondItem="3If-Gi-Mxk" secondAttribute="bottom" constant="46" id="4Cz-X0-koF"/>
-                            <constraint firstItem="IN0-CR-jvP" firstAttribute="centerX" secondItem="HLU-gt-YwP" secondAttribute="centerX" id="6BV-Ui-TiT"/>
                             <constraint firstItem="fQN-CV-lD2" firstAttribute="baseline" secondItem="3If-Gi-Mxk" secondAttribute="baseline" id="Cox-X9-bSt"/>
                             <constraint firstItem="RKO-B1-We7" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="Dcp-rM-7FI"/>
                             <constraint firstItem="fQN-CV-lD2" firstAttribute="leading" secondItem="hom-VN-QC1" secondAttribute="leadingMargin" id="HNS-vT-Rb4"/>
-                            <constraint firstItem="0AR-1V-i3O" firstAttribute="leading" secondItem="yKv-UZ-LkF" secondAttribute="leading" constant="126" id="LZn-3B-Ery"/>
-                            <constraint firstItem="IN0-CR-jvP" firstAttribute="leading" secondItem="yKv-UZ-LkF" secondAttribute="leading" constant="118" id="P9J-hK-lfp"/>
                             <constraint firstItem="Y32-Ts-CRL" firstAttribute="top" secondItem="HLU-gt-YwP" secondAttribute="bottom" constant="38" id="RM4-3n-Cra"/>
                             <constraint firstItem="IN0-CR-jvP" firstAttribute="centerY" secondItem="hom-VN-QC1" secondAttribute="centerY" id="Tea-o4-fTl"/>
-                            <constraint firstItem="HLU-gt-YwP" firstAttribute="centerX" secondItem="Y32-Ts-CRL" secondAttribute="centerX" id="Tz0-Yl-mRz"/>
                             <constraint firstItem="K1t-IQ-Szn" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="a7Z-gX-mu9"/>
                             <constraint firstItem="yKv-UZ-LkF" firstAttribute="bottom" secondItem="Y32-Ts-CRL" secondAttribute="bottom" constant="121" id="aSb-HH-30O"/>
+                            <constraint firstItem="HLU-gt-YwP" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="afU-qc-5g0"/>
                             <constraint firstItem="CuC-PL-ryW" firstAttribute="centerX" secondItem="0AR-1V-i3O" secondAttribute="centerX" id="al4-fg-bAk"/>
                             <constraint firstItem="yKv-UZ-LkF" firstAttribute="bottom" secondItem="K1t-IQ-Szn" secondAttribute="bottom" constant="46" id="dE0-x9-MhJ"/>
                             <constraint firstItem="3If-Gi-Mxk" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="hM0-ih-Ivf"/>
                             <constraint firstItem="CuC-PL-ryW" firstAttribute="top" secondItem="yKv-UZ-LkF" secondAttribute="top" constant="16" id="jqz-ii-cxb"/>
-                            <constraint firstItem="CuC-PL-ryW" firstAttribute="trailing" secondItem="HLU-gt-YwP" secondAttribute="trailing" id="kfD-dk-jCj"/>
                             <constraint firstItem="3If-Gi-Mxk" firstAttribute="top" secondItem="Y32-Ts-CRL" secondAttribute="bottom" constant="45" id="kn3-uP-mT2"/>
                             <constraint firstItem="0AR-1V-i3O" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="mVb-4Q-zBh"/>
                             <constraint firstItem="K1t-IQ-Szn" firstAttribute="top" secondItem="Y32-Ts-CRL" secondAttribute="bottom" constant="45" id="oFN-os-mss"/>
-                            <constraint firstItem="CuC-PL-ryW" firstAttribute="leading" secondItem="HLU-gt-YwP" secondAttribute="leading" id="sIx-3w-Pb9"/>
                             <constraint firstItem="yKv-UZ-LkF" firstAttribute="bottom" secondItem="RKO-B1-We7" secondAttribute="bottom" constant="46" id="scz-Vb-hgX"/>
                             <constraint firstItem="RKO-B1-We7" firstAttribute="leading" secondItem="fQN-CV-lD2" secondAttribute="trailing" constant="98" id="tdp-hY-WDU"/>
+                            <constraint firstItem="Y32-Ts-CRL" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="uqJ-7c-Ufw"/>
+                            <constraint firstItem="IN0-CR-jvP" firstAttribute="centerX" secondItem="hom-VN-QC1" secondAttribute="centerX" id="vRa-lM-DFO"/>
                             <constraint firstItem="0AR-1V-i3O" firstAttribute="top" secondItem="CuC-PL-ryW" secondAttribute="bottom" constant="8" symbolic="YES" id="xjp-XG-EAz"/>
                             <constraint firstItem="RKO-B1-We7" firstAttribute="top" secondItem="Y32-Ts-CRL" secondAttribute="bottom" constant="45" id="zJm-1T-XX2"/>
                         </constraints>

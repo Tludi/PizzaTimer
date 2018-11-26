@@ -41,10 +41,12 @@
 
 #include <realm/sync/history.hpp>
 #include <realm/sync/permissions.hpp>
+#include <realm/sync/version.hpp>
 #else
 namespace realm {
 namespace sync {
     struct PermissionsCache {};
+    struct TableInfoCache {};
 }
 }
 #endif
@@ -560,7 +562,24 @@ void Realm::cache_new_schema()
     m_new_schema = util::none;
 }
 
-void Realm::notify_schema_changed() {
+void Realm::translate_schema_error()
+{
+    // Open another copy of the file to read the new (incompatible) schema without changing
+    // our read transaction
+    auto config = m_config;
+    config.schema = util::none;
+    auto realm = Realm::make_shared_realm(std::move(config), nullptr);
+    auto& new_schema = realm->schema();
+
+    // Should always throw
+    ObjectStore::verify_valid_external_changes(m_schema.compare(new_schema, true));
+
+    // Something strange happened so just rethrow the old exception
+    throw;
+}
+
+void Realm::notify_schema_changed()
+{
     if (m_binding_context) {
         m_binding_context->schema_did_change(m_schema);
     }
@@ -641,7 +660,12 @@ void Realm::begin_transaction()
     m_is_sending_notifications = true;
     auto cleanup = util::make_scope_exit([this]() noexcept { m_is_sending_notifications = false; });
 
-    m_coordinator->promote_to_write(*this);
+    try {
+        m_coordinator->promote_to_write(*this);
+    }
+    catch (_impl::UnsupportedSchemaChange const&) {
+        translate_schema_error();
+    }
     cache_new_schema();
 }
 
@@ -690,6 +714,7 @@ void Realm::invalidate()
     }
 
     m_permissions_cache = nullptr;
+    m_table_info_cache = nullptr;
     m_shared_group->end_read();
     m_group = nullptr;
 }
@@ -705,11 +730,11 @@ bool Realm::compact()
         throw InvalidTransactionException("Can't compact a Realm within a write transaction");
     }
 
-    Group& group = read_group();
-    for (auto &object_schema : m_schema) {
-        ObjectStore::table_for_object_type(group, object_schema.name)->optimize();
+    verify_open();
+    // FIXME: when enum columns are ready, optimise all tables in a write transaction
+    if (m_group) {
+        m_shared_group->end_read();
     }
-    m_shared_group->end_read();
     m_group = nullptr;
 
     return m_shared_group->compact();
@@ -775,7 +800,12 @@ void Realm::notify()
     m_is_sending_notifications = true;
     if (m_auto_refresh) {
         if (m_group) {
-            m_coordinator->advance_to_ready(*this);
+            try {
+                m_coordinator->advance_to_ready(*this);
+            }
+            catch (_impl::UnsupportedSchemaChange const&) {
+                translate_schema_error();
+            }
             cache_new_schema();
         }
         else  {
@@ -816,9 +846,14 @@ bool Realm::refresh()
         m_binding_context->before_notify();
     }
     if (m_group) {
-        bool version_changed = m_coordinator->advance_to_latest(*this);
-        cache_new_schema();
-        return version_changed;
+        try {
+            bool version_changed = m_coordinator->advance_to_latest(*this);
+            cache_new_schema();
+            return version_changed;
+        }
+        catch (_impl::UnsupportedSchemaChange const&) {
+            translate_schema_error();
+        }
     }
 
     // No current read transaction, so just create a new one
@@ -857,6 +892,7 @@ void Realm::close()
     }
 
     m_permissions_cache = nullptr;
+    m_table_info_cache = nullptr;
     m_group = nullptr;
     m_shared_group = nullptr;
     m_history = nullptr;
@@ -929,6 +965,7 @@ T Realm::resolve_thread_safe_reference(ThreadSafeReference<T> reference)
         if (reference_version < current_version) {
             // Duplicate config for uncached Realm so we don't advance the user's Realm
             Realm::Config config = m_coordinator->get_config();
+            config.automatic_change_notifications = false;
             config.cache = false;
             config.schema = util::none;
             SharedRealm temporary_realm = m_coordinator->get_realm(config);
@@ -987,7 +1024,13 @@ bool Realm::init_permission_cache()
 
     // Admin users bypass permissions checks outside of the logic in PermissionsCache
     if (m_config.sync_config && m_config.sync_config->is_partial && !m_config.sync_config->user->is_admin()) {
+#if REALM_SYNC_VER_MAJOR == 3 && (REALM_SYNC_VER_MINOR < 13 || (REALM_SYNC_VER_MINOR == 13 && REALM_SYNC_VER_PATCH < 3))
         m_permissions_cache = std::make_unique<sync::PermissionsCache>(read_group(), m_config.sync_config->user->identity());
+#else
+        m_table_info_cache = std::make_unique<sync::TableInfoCache>(read_group());
+        m_permissions_cache = std::make_unique<sync::PermissionsCache>(read_group(), *m_table_info_cache,
+                                                                       m_config.sync_config->user->identity());
+#endif
         return true;
     }
     return false;
@@ -1063,4 +1106,9 @@ Group& RealmFriend::read_group_to(Realm& realm, VersionID version)
         realm.m_shared_group->end_read();
     realm.begin_read(version);
     return *realm.m_group;
+}
+
+std::size_t Realm::compute_size() {
+    Group& group = read_group();
+    return group.compute_aggregated_byte_size();
 }

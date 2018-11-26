@@ -30,7 +30,8 @@ class DataManager {
                 newPizza.id = pizza.id
                 newPizza.name = pizza.name
                 newPizza.brand = pizza.brand
-                newPizza.cookingTime = pizza.cookingTime
+                newPizza.lowCookingTime = pizza.lowCookingTime
+                newPizza.highCookingTime = pizza.highCookingTime
                 newPizza.temperature = pizza.temperature
                 realm.add(newPizza)
             }

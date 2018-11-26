@@ -74,7 +74,7 @@ class CustomItemViewController: UIViewController, UIPickerViewDelegate, UIPicker
             newCustomPizza.name = selectedName!
             newCustomPizza.brand = selectedBrand!
             newCustomPizza.temperature = String(tempRange[selectedTemp])
-            newCustomPizza.cookingTime = String(timeRange[selectedTime])
+            newCustomPizza.lowCookingTime = String(timeRange[selectedTime])
             realm.add(newCustomPizza)
         }
         print(newCustomPizza)

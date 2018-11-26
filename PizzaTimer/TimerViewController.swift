@@ -63,7 +63,7 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        baseTime = Int(singlePizza.cookingTime)! //* 60 //remove the * 60 for shorter test times
+        baseTime = Int(singlePizza.lowCookingTime)! //* 60 //remove the * 60 for shorter test times
         totalTime = baseTime
         pauseButtonOutlet.isHidden = true
         resumeButtonOutlet.isHidden = true
@@ -82,13 +82,13 @@ class TimerViewController: UIViewController {
         } else {
             nameLabel.text = customPizza.name
             brandLabel.text = customPizza.brand
-            timeLabel.text = customPizza.cookingTime
+            timeLabel.text = customPizza.lowCookingTime
             tempLabel.text = customPizza.temperature
             
         }
         
         customLabel.text = "custom label to use or remove"
-        timerRingLayer()
+//        timerRingLayer()
     }
     
     // seperate out into individual functions
